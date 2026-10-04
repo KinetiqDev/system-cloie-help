@@ -1,0 +1,51 @@
+---
+title: A Student is not showing on the roster
+description: Why a Student cannot be added to a Course roster, and why a name import comes back ambiguous.
+lastVerified: 2026-10-04
+keywords:
+  - student not found
+  - add student failed
+  - ambiguous name
+  - import students
+related:
+  - /faculty/course-rosters/
+  - /troubleshooting/roster-locked/
+---
+
+**Problem.** You cannot add a Student to your Course roster, or a CSV import says
+the Student is **Ambiguous** or **No match**.
+
+## Check this first
+
+1. The Student account is **active** — not deactivated.
+2. The Student has a **complete profile**.
+3. The Student has an **active-term placement**.
+4. The name you typed matches their account name.
+
+## Why this can happen
+
+:::caution
+Roster members are matched **by name**. There are no Student IDs in a roster. A
+name that matches more than one Student is reported as **Ambiguous** and is never
+resolved automatically — the system will not guess which person you meant.
+:::
+
+- **Ineligible** members can be added, but will not become evaluation-eligible
+  until their record is fixed. The row shows why.
+- **Invalid name** means the row does not resolve to any account at all.
+- **Already Enrolled** means that Student is already on this roster.
+
+## What you can do
+
+- Use **Add one Student** and check the returned program, major, and year level
+  before confirming.
+- On import, resolve each **Ambiguous** row deliberately — open the candidate and
+  pick the right one.
+- Add the Student anyway if they belong; they become eligible once the Secretary
+  fixes their record.
+
+## When to contact an administrator
+
+Contact the **Secretary** if a Student has no account, an incomplete profile, or
+no placement. Placement is institutional — see
+[My academic placement is missing](/troubleshooting/student-placement/).

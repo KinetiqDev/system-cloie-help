@@ -1,0 +1,44 @@
+---
+title: I cannot access this page
+description: Why a page refuses you even though you are signed in, and how to work out whether it is scope, role, or an unfinished feature.
+lastVerified: 2026-10-04
+keywords:
+  - access denied
+  - unauthorized
+  - "403"
+  - can't access page
+related:
+  - /start/understand-access/
+  - /troubleshooting/role-missing/
+---
+
+**Problem.** System CLOIE shows an **access denied** or **unauthorized** message
+for a page you believe belongs to your role.
+
+## Check this first
+
+1. Which role is **active** right now?
+2. Is the page inside your **scope** — your program, or your assigned Courses?
+3. Is the feature simply not implemented for anyone yet?
+
+## Why this can happen
+
+- Your **active role** does not own that route. Internal roles have separate
+  route trees with no impersonation between them.
+- Your **scope** does not include that program or Course.
+- Your **profile gate** is not satisfied, so the active role resolves to no role.
+- The route exists but the feature is **deferred** — for example Dean Analytics
+  and Dean Reports.
+
+## What you can do
+
+- Switch to the correct active role and try again:
+  [Switch your active role](/start/switch-active-role/).
+- Confirm the program or Course is within your scope.
+- If a page is listed in a role's guide but refuses you, treat it as not
+  implemented rather than as a bug to work around.
+
+## When to contact an administrator
+
+Contact the **Secretary** if your scope is genuinely correct — managed programs
+and Course assignments are the two things most often recorded incorrectly.
