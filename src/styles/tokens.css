@@ -1,0 +1,272 @@
+/* ============================================================================
+ * System CLOIE Help Center — design tokens
+ * ============================================================================
+ * Ported from the CLOIE-Blog design system (`src/styles/tokens.css`), which is
+ * itself ported from the System CLOIE application design system. Roles that
+ * only served the blog's manuscript surfaces (print, hero/footer gradients,
+ * chart palette, evidence-status set) are omitted; nothing here is invented.
+ *
+ * Contract: this file is the ONLY place a colour, radius, space or shadow
+ * value may appear. `theme.css` resolves these roles into Starlight's
+ * `--sl-color-*` interface, and components consume the roles, not literals.
+ *
+ * Roles resolve twice — `:root` for light, `:root[data-theme='dark']` for
+ * dark. A role's meaning is constant across themes; only its value changes.
+ * The dark selector is Starlight's own `data-theme` attribute, so the site
+ * follows the built-in theme toggle, the OS preference, and `prefers-color-
+ * scheme` without any custom script.
+ * ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+ * 1. Brand references — sampled from the System CLOIE mark itself.
+ *    Values only; components consume the semantic roles below.
+ * ------------------------------------------------------------------------- */
+:root {
+  --brand-blue: #1f62f0; /* the mark's primary blue */
+  --brand-navy: #212160; /* the mark's institutional navy */
+  --brand-cyan: #0598e3; /* the mark's cyan */
+  --brand-gold: #ffd700; /* ACD institutional gold — seal/sponsor surfaces only */
+  --brand-gold-ink: #92700c;
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. Operational primary & brand accent
+ * ------------------------------------------------------------------------- */
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-active: #1e40af;
+  --color-on-primary: #ffffff;
+  --color-primary-soft: #eff6ff;
+  --color-primary-muted: #dbeafe;
+  --color-primary-border: #bfdbfe;
+
+  /* Brand accent: the logo's cyan. Wordmark, role accents, category washes. */
+  --brand-accent: var(--brand-cyan);
+  --brand-accent-hover: #0277b4;
+  --brand-accent-active: #025d8f;
+  --brand-accent-soft: #ecfeff;
+  --brand-accent-border: #a5e8fb;
+  --brand-accent-on: #ffffff;
+
+  --navy-ref: var(--brand-navy);
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. Semantic surfaces
+ * ------------------------------------------------------------------------- */
+:root {
+  --surface-primary: #ffffff;
+  --surface-secondary: #f8fafc;
+  --surface-tertiary: #f0f7ff;
+  --surface-muted: #e9eef6;
+  --surface-hover: #eef3f9;
+  --surface-input: #ffffff;
+  --surface-overlay: #ffffff;
+  --scrim: rgba(15, 23, 42, 0.5);
+
+  /* A tinted panel: role notices, related-guide cards, media placeholders.
+     Opaque in light so it reads as a distinct plane; a translucent brand wash
+     in dark so it separates by luminance instead of by an opaque block. */
+  --surface-tinted: var(--surface-tertiary);
+
+  /* The CLOIE mark is a dark vector on a transparent canvas and needs a light
+     disc to stay legible in dark mode and in the header. Fixed, not
+     theme-aware, because the plate is the same in both themes. */
+  --brand-logo-plate: #f7faff;
+}
+
+/* ---------------------------------------------------------------------------
+ * 4. Borders
+ * ------------------------------------------------------------------------- */
+:root {
+  --border-default: #e2e8f0;
+  --border-strong: #7d8da1;
+  --border-subtle: #f1f5f9;
+  --input-border: #64748b;
+}
+
+/* ---------------------------------------------------------------------------
+ * 5. Text / foregrounds
+ * ------------------------------------------------------------------------- */
+:root {
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-disabled: #94a3b8;
+
+  --link-color: var(--color-primary);
+  --link-hover: var(--color-primary-hover);
+  /* Ink a brand-tinted heading or link wears on its own surface. */
+  --heading-accent: var(--color-primary-hover);
+
+  --focus-ring: #0284c7;
+  --selected-bg: #eff6ff;
+  --selected-fg: #1e40af;
+}
+
+/* ---------------------------------------------------------------------------
+ * 6. Neutral secondary action — distinct from the brand accent
+ * ------------------------------------------------------------------------- */
+:root {
+  --secondary-bg: #f1f5f9;
+  --secondary-hover: #e2e8e0;
+  --secondary-fg: #0f172a;
+}
+
+/* ---------------------------------------------------------------------------
+ * 7. Brand washes, derived so they track the accent in both themes
+ * ------------------------------------------------------------------------- */
+:root {
+  --primary-wash-subtle: color-mix(in srgb, var(--brand-accent) 6%, transparent);
+  --primary-wash-muted: color-mix(in srgb, var(--brand-accent) 10%, transparent);
+  --primary-wash-border: color-mix(in srgb, var(--brand-accent) 22%, transparent);
+  --primary-wash-strong: color-mix(in srgb, var(--brand-accent) 32%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+ * 8. Status roles — every status pairs colour with a text label.
+ * ------------------------------------------------------------------------- */
+:root {
+  --status-success-main: #047857;
+  --status-success-subtle: #ecfdf5;
+  --status-warning-main: #b45309;
+  --status-warning-subtle: #fffbeb;
+  --status-danger-main: #b91c1c;
+  --status-danger-subtle: #fef2f2;
+  --status-info-main: #4f46e5;
+  --status-info-subtle: #eef2ff;
+
+  --brand-gold-wash: color-mix(in srgb, var(--brand-gold) 8%, transparent);
+  --brand-gold-border: color-mix(in srgb, var(--brand-gold) 30%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+ * 9. Shadows — minimal institutional scale. Strong elevation is overlay-only;
+ *    dark mode relies on luminance and borders before shadow.
+ * ------------------------------------------------------------------------- */
+:root {
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-dropdown: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.06);
+}
+
+/* ---------------------------------------------------------------------------
+ * 10. Radius, spacing, type, motion
+ * ------------------------------------------------------------------------- */
+:root {
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  --font-heading:
+    var(--font-manrope), var(--font-inter), 'Segoe UI', Arial, sans-serif;
+  --font-body: var(--font-inter), 'Segoe UI', Arial, sans-serif;
+  --font-sans: var(--font-inter), 'Segoe UI', Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+
+  /* Upstream's legibility floor: body copy never below 0.875rem. */
+  --font-size-minimum: 0.75rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-caption: 0.75rem;
+  --line-height-reading: 1.7;
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+}
+
+html {
+  font-family: var(--font-body);
+}
+
+/* ============================================================================
+ * DARK THEME
+ * ============================================================================
+ * Starlight sets `data-theme="dark"` on <html> for the dark theme and
+ * `data-theme="light"` for the light theme (its `:root` block already holds
+ * the dark values). Every role below is re-declared so no stylesheet branches
+ * on the theme anywhere else.
+ * ========================================================================== */
+:root[data-theme='dark'] {
+  --brand-accent: #22b8f0;
+  --brand-accent-hover: #38bdf8;
+  --brand-accent-active: #0ea5e9;
+  --brand-accent-soft: #082f49;
+  --brand-accent-border: #0e7490;
+  --brand-accent-on: #082f49;
+
+  --color-primary: #60a5fa;
+  --color-primary-hover: #93c5fd;
+  --color-primary-active: #bfdbfe;
+  --color-primary-soft: #172554;
+  --color-primary-muted: #1e3a8a;
+  --color-primary-border: #1e40af;
+
+  --surface-primary: #1e293b;
+  --surface-secondary: #0f172a;
+  --surface-tertiary: #162032;
+  --surface-muted: #1e293b;
+  --surface-hover: #28344c;
+  --surface-input: #0f172a;
+  --surface-overlay: #1e293b;
+  --scrim: rgba(2, 6, 23, 0.6);
+  --surface-tinted: var(--primary-wash-subtle);
+
+  --border-default: #334155;
+  --border-strong: #64748b;
+  --border-subtle: #1e293b;
+  --input-border: #64748b;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-disabled: #64748b;
+
+  --link-color: #60a5fa;
+  --link-hover: #93c5fd;
+  --heading-accent: var(--color-primary);
+
+  --focus-ring: #38bdf8;
+  --selected-bg: #172554;
+  --selected-fg: #bfdbfe;
+
+  --secondary-bg: #1e293b;
+  --secondary-hover: #28344c;
+  --secondary-fg: #f8fafc;
+
+  --status-success-main: #34d399;
+  --status-success-subtle: #052e2b;
+  --status-warning-main: #fbbf24;
+  --status-warning-subtle: #451a03;
+  --status-danger-main: #f87171;
+  --status-danger-subtle: #450a0a;
+  --status-info-main: #a5b4fc;
+  --status-info-subtle: #1e1b4b;
+
+  --brand-gold-ink: #ffd700;
+  --brand-gold-wash: color-mix(in srgb, var(--brand-gold) 12%, transparent);
+  --brand-gold-border: color-mix(in srgb, var(--brand-gold) 38%, transparent);
+
+  /* Elevation: dark leans on luminance and borders, so the scale is flatter
+     and deeper than light rather than a copy of it. */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-dropdown: 0 4px 6px -1px rgba(0, 0, 0, 0.35), 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+}

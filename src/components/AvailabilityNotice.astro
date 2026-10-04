@@ -1,0 +1,29 @@
+---
+/**
+ * Explains that a page or control exists in the application but is not a
+ * finished workflow. Used instead of writing invented steps for deferred
+ * features.
+ */
+const { title = 'Not available yet', variant = 'caution' } = Astro.props as {
+  title?: string;
+  variant?: 'note' | 'caution';
+};
+
+const labels: Record<string, string> = {
+  note: 'Good to know',
+  caution: 'Heads up',
+};
+---
+
+<aside class="availability">
+  <p class="availability__title">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M12 8v5M12 16.5v.01"></path>
+    </svg>
+    {labels[variant] ?? labels.caution}: {title}
+  </p>
+  <div class="availability__body">
+    <slot />
+  </div>
+</aside>

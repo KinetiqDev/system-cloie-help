@@ -1,0 +1,38 @@
+---
+/**
+ * "Where to go next" block rendered from the article's `related` frontmatter.
+ * Each slug is resolved through the docs collection so a typo fails the build
+ * instead of shipping a dead link.
+ */
+import { getCollection } from 'astro:content';
+
+const { slugs } = Astro.props as { slugs: string[] };
+
+const entries = await getCollection('docs');
+const index = new Map(entries.map((entry) => [`/${entry.id}`, entry]));
+
+const links = slugs.map((slug) => {
+  const normalized = slug.replace(/\/$/, '');
+  const entry = index.get(normalized) ?? index.get(`${normalized}/`);
+  return entry ? { slug: normalized, title: entry.data.title, note: entry.data.description } : null;
+});
+const resolved = links.filter((link) => link !== null);
+---
+
+{resolved.length > 0 && (
+  <nav class="related" aria-labelledby="related-heading">
+    <h2 class="related__title" id="related-heading">
+      Where to go next
+    </h2>
+    <ul class="related__list">
+      {resolved.map((link) => (
+        <li class="related__item">
+          <a href={`${link.slug}/`}>
+            <span class="related__item-title">{link.title}</span>
+            {link.note && <span class="related__item-note">{link.note}</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

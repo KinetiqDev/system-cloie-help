@@ -1,0 +1,22 @@
+---
+/**
+ * Starlight renders the Markdown and hands it to this component as a slot.
+ * We keep Starlight's own wrapper markup (so `markdown.css` still applies) and
+ * append the article's `related` frontmatter links as a "Where to go next"
+ * block. Doing it here keeps the next-links list next to the frontmatter that
+ * defines it, instead of repeating it in ~60 MDX files.
+ */
+import RelatedGuides from './RelatedGuides.astro';
+// Starlight's own Markdown stylesheet (tables, blockquotes, heading anchors).
+// The override replaces their wrapper component, so it has to re-import this.
+import '@astrojs/starlight/style/markdown.css';
+
+const entry = Astro.locals.starlightRoute?.entry;
+// Starlight's `starlightRoute` type only knows Starlight's own frontmatter.
+const related = (entry?.data as { related?: string[] } | undefined)?.related ?? [];
+---
+
+<div class="sl-markdown-content">
+  <slot />
+  {related.length > 0 && <RelatedGuides slugs={related} />}
+</div>

@@ -1,0 +1,50 @@
+---
+/**
+ * The site's primary search entry. Starlight's own `Search` control is a bare
+ * icon button in the header; this wraps it in a labelled block so the homepage
+ * can present it as the first thing a visitor reaches for.
+ */
+import Search from '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="site-search">
+  <Search class="sl-flex" />
+  <p class="site-search__hint">
+    Search by what you are trying to do — “publish evaluation”, “missing course”, “can't submit”.
+  </p>
+</div>
+
+<style>
+  .site-search {
+    margin: var(--space-6) 0;
+  }
+  .site-search :global(site-search) {
+    display: block;
+  }
+  .site-search :global(site-search button) {
+    width: 100%;
+    justify-content: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    background-color: var(--surface-primary);
+    color: var(--text-muted);
+    font-size: var(--font-size-body-sm);
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+  }
+  .site-search :global(site-search button:hover:not(:disabled)) {
+    border-color: var(--color-primary);
+    color: var(--text-secondary);
+  }
+  .site-search :global(site-search button svg) {
+    flex: none;
+    color: var(--link-color);
+  }
+  .site-search__hint {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-caption);
+    color: var(--text-muted);
+  }
+</style>

@@ -1,0 +1,19 @@
+---
+/**
+ * Reserves the slot where a real interface screenshot belongs. It names the
+ * asset so whoever captures it later knows exactly what to produce, and the
+ * page stays fully usable without it. Use only where an image would materially
+ * help — not on every page.
+ */
+const { caption } = Astro.props as { caption: string };
+---
+
+<figure class="media-placeholder">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--text-muted);">
+    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+    <path d="m3 16 5-5 4 4 3-3 6 6"></path>
+    <circle cx="9" cy="9" r="1.4"></circle>
+  </svg>
+  <p class="media-placeholder__label">Screenshot placeholder</p>
+  <figcaption class="media-placeholder__caption">{caption}</figcaption>
+</figure>

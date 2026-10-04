@@ -1,0 +1,64 @@
+---
+/**
+ * Video slot. With a URL it links to the guide and optionally embeds a
+ * click-to-play iframe; without one it renders a quiet placeholder so a page
+ * never shows a broken player. Written instructions stay primary in both
+ * states — the video never autoplays.
+ *
+ * Accepts a YouTube watch/share URL or a bare video id.
+ */
+const { title, url, duration } = Astro.props as {
+  title: string;
+  url?: string;
+  duration?: string;
+};
+
+const toId = (value: string): string | null => {
+  const id = value.match(/(?:v=|youtu\.be\/|embed\/|\/shorts\/)([\w-]{6,})/)?.[1];
+  return id ?? (/^[\w-]{6,}$/.test(value) ? value : null);
+};
+
+const videoId = url ? toId(url) : null;
+---
+
+{
+  videoId ? (
+    <figure class="video-guide__figure">
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+        title={title}
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      />
+      <figcaption class="video-guide" style="margin: 0; border: 0; border-radius: 0;">
+        <div>
+          <p class="video-guide__title">{title}</p>
+          <p class="video-guide__meta">{duration ? `${duration} · ` : ''}YouTube</p>
+        </div>
+        <a
+          class="video-guide__cta"
+          href={`https://www.youtube.com/watch?v=${videoId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch on YouTube
+        </a>
+      </figcaption>
+    </figure>
+  ) : (
+    <div class="video-guide">
+      <svg class="role-notice__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+        <path d="m10 9 5 3-5 3z"></path>
+      </svg>
+      <div>
+        <p class="video-guide__title">{title}</p>
+        <p class="video-guide__meta">
+          Video guide coming soon — the written steps below are complete without it.
+        </p>
+      </div>
+    </div>
+  )
+}

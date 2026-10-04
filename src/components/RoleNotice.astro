@@ -1,0 +1,33 @@
+---
+/**
+ * Marks an article as written for one role. Optional `scope` text states the
+ * authority boundary the role actually has, which is the single most common
+ * source of confusion in the application.
+ */
+const { roles, scope } = Astro.props as { roles: string[]; scope?: string };
+
+const LABELS: Record<string, string> = {
+  secretary: 'Secretary',
+  dean: 'College Dean',
+  'gen-ed-coordinator': 'General Education Coordinator',
+  'program-head': 'Program Head',
+  faculty: 'Faculty Member',
+  student: 'Student',
+  alumni: 'Alumni',
+  'industry-partner': 'Industry Partner',
+};
+
+const label = roles.map((role) => LABELS[role] ?? role).join(' or ');
+---
+
+<aside class="role-notice">
+  <svg class="role-notice__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="8" r="4"></circle>
+    <path d="M4 21a8 8 0 0 1 16 0"></path>
+  </svg>
+  <div>
+    <p class="role-notice__label">{label}</p>
+    {scope && <p class="role-notice__body">{scope}</p>}
+    <slot />
+  </div>
+</aside>
