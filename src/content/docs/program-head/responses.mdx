@@ -1,0 +1,68 @@
+---
+title: Review evaluation responses
+description: How to read a published evaluation's completion information, response details, and written feedback.
+role:
+  - program-head
+appRoutes:
+  - /program-head/programs/:programId/responses
+  - /program-head/programs/:programId/responses/*
+  - /program-head/cilo-reviews
+lastVerified: 2026-10-04
+keywords:
+  - responses
+  - review responses
+  - identified review
+  - qualitative feedback
+related:
+  - /program-head/analytics/
+  - /concepts/privacy-and-response-visibility/
+---
+
+**Responses** is your review surface for both Course-bound and Program-wide
+evaluations in your program.
+
+## Choose an evaluation
+
+The list is filtered by evaluation kind — **Course evaluation** or
+**Program-wide evaluation** — plus status. Open one to see its detail view.
+
+## Completion information
+
+Each evaluation reports:
+
+- **Assigned** — how many respondent assignments were created at publication.
+- **Responses** — how many have been submitted.
+- **Completion** — the ratio. It is a participation figure, not a satisfaction score.
+
+In-progress drafts are never shown. Only submitted responses are reviewable, and
+a draft belongs to its respondent alone.
+
+## Response details
+
+You are the **only role that sees identified respondent detail** — who responded,
+in the context of your program. Faculty and the Dean see the anonymized flow
+only. That boundary is deliberate and is enforced on the server.
+
+Course-bound and Program-wide evidence are kept **separate**. Do not pool them
+into a single figure.
+
+## Qualitative feedback
+
+Written answers appear per response. Their summary is a deterministic description
+of what was written — it does not judge or rank respondents.
+
+:::caution
+Raw qualitative comments are **not** cleared for unrestricted reuse. Removing a
+name does not make a comment publishable. Treat comment reuse as a separate
+privacy decision, not as a reporting convenience.
+:::
+
+## Evidence and privacy
+
+- Minimum-response suppression behaviour for small groups is still an open
+  product decision. Do not build a practice that assumes a specific suppression
+  rule.
+- The AI-assisted interpretation available in analytics is bounded and
+  non-persisted; no raw comment or respondent identifier crosses that boundary.
+
+See [Who can see evaluation responses?](/concepts/privacy-and-response-visibility/).

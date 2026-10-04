@@ -1,0 +1,87 @@
+---
+title: Manage evaluation tools for your program
+description: How to derive a tool from an institutional baseline, build your own, add and bind questions, and know when a tool can be published.
+role:
+  - program-head
+appRoutes:
+  - /program-head/programs/:programId/tools
+  - /program-head/programs/:programId/tools/*
+  - /program-head/tools
+lastVerified: 2026-10-04
+keywords:
+  - evaluation tool
+  - template
+  - baseline
+  - questions
+  - derive tool
+related:
+  - /concepts/evaluation-tools/
+  - /program-head/publish-program-evaluation/
+  - /secretary/evaluation-tools/
+---
+
+An **evaluation tool** is the question set an evaluation is published from. You
+own two kinds: **Program-owned** tools and Course-bound tools for your program's
+Courses.
+
+## Start from an institutional baseline
+
+1. Select **New Tool**.
+2. Choose **from baseline** and pick the institutional tool to copy.
+3. Name the result for your program.
+4. Adjust the questions.
+
+Copying rather than editing keeps the institutional baseline intact and lets you
+specialize it. The copy is yours; the original stays under [Secretary](/secretary/evaluation-tools/) and [Dean](/dean/evaluation-tools/) control.
+
+## Create a Program-owned tool
+
+Select **New Tool → blank** and build it from nothing. Use this when no baseline
+fits — for example a Program-wide evaluation aimed at Alumni.
+
+## Build or edit questions
+
+Question types:
+
+| Type | Use it for |
+| --- | --- |
+| **Likert** | A rating statement on a defined scale |
+| **Guided Open-Ended** | A written prompt with guidance for the respondent |
+| **Predefined Responses** | A fixed choice list |
+
+Group questions into sections. A section with no questions is not shown to
+respondents. Define **Scale Descriptors** once and reuse them, so the same score
+means the same thing across every evaluation in your program.
+
+:::caution
+One CILO can carry many Likert questions. Binding several statements to the same
+CILO is expected — do not create duplicate CILOs to hold extra questions.
+:::
+
+## Bind questions to CILOs
+
+For a Course-bound tool, bind rating questions to the CILOs they measure. Those
+bindings are what let a response become GO evidence later.
+
+For a **Program-wide** tool, bind the goal the evidence serves at publish time
+instead — the deployment carries the GO binding with it.
+
+## Save versions
+
+Saving records a **version**. Published evaluations are frozen against the
+version they were published from: editing a tool afterwards creates a new version
+and never alters an evaluation that is running or closed.
+
+## When a tool can be published
+
+A tool can be published when:
+
+- every active CILO in the target Course context satisfies the typed alignment
+  rule — see [I cannot publish an evaluation](/troubleshooting/cannot-publish-evaluation/);
+- and, for a Program-wide deployment, a GO binding has been chosen.
+
+## Reuse a tool
+
+**Save as Program Copy** and **Save as Course Copy** duplicate an existing tool
+so you can specialize it without touching the version other evaluations already
+reference.

@@ -1,0 +1,89 @@
+---
+title: Review Program analytics
+description: How to choose an evidence scope, read outcome evidence, compare stakeholder sources, and interpret qualitative and AI-assisted summaries.
+role:
+  - program-head
+appRoutes:
+  - /program-head/programs/:programId/analytics
+  - /program-head/analytics
+lastVerified: 2026-10-04
+keywords:
+  - analytics
+  - evidence
+  - outcomes
+  - stakeholders
+  - trends
+  - AI insight
+related:
+  - /concepts/analytics-and-evidence/
+  - /program-head/responses/
+---
+
+Program analytics turns submitted responses into **source-aware evidence**. It
+never pools sources, and it never invents a figure the responses do not support.
+
+## Choose the evidence scope
+
+Use the analytics scope filters to select the academic term, the Course or
+evaluation, and the evidence source. Filters are period-aware; a term with no
+submitted responses says so rather than showing zero as if it meant "poor
+performance".
+
+## Understand outcome evidence
+
+- **Direct GO results** come from GO-bound questions on Program-wide deployments.
+- **GO mappings** carry Course-bound evidence: CILO ratings flow to a GO through
+  the CILO's current mapping and its manifestation value.
+- **Bound Questions** shows which questions fed a figure, so it is always
+  traceable.
+
+:::caution
+Where the mapping used to interpret a figure has since changed, System CLOIE
+discloses that. A GO number whose underlying mapping moved is not strictly
+comparable to one from an earlier term.
+:::
+
+## Compare available stakeholder evidence
+
+Completion by stakeholder shows how each respondent group participated — Students,
+Alumni, and Industry Partners are counted **separately**.
+
+"Evidence sources are kept separate" is deliberate. A Program-wide evaluation and
+a Course evaluation may ask about the same GO with different instruments and
+different respondents; their results describe different populations.
+
+## Read qualitative summaries
+
+**Qualitative summary** and **Sentiment** are deterministic descriptions of
+submitted written answers. They report shape, not meaning.
+
+## AI-assisted interpretation
+
+**AI-generated insight** is a bounded supplement computed over an aggregate
+packet:
+
+- no raw comments cross the boundary;
+- no respondent identifiers cross the boundary;
+- nothing is persisted as a record of a respondent;
+- it never replaces human CQI judgement.
+
+Treat it as a prompt for your own reading, not as a finding.
+
+## What analytics do not mean
+
+- Analytics is **not** attainment. A high rating is evidence about respondent
+  perception, not a measured learning gain.
+- Analytics is **not** comparable across instruments. Where comparability breaks,
+  System CLOIE says so.
+- Analytics is **not** a ranking of Faculty or Students.
+
+## Reports are not available yet
+
+:::caution
+**Program report export is a stub.** The Reports page lists the reports that are
+planned; export controls are not implemented. Do not promise a PDF or spreadsheet
+from System CLOIE. See [Reports](/program-head/reports/).
+:::
+
+See [How to read CLOIE evidence](/concepts/analytics-and-evidence/) for the shared
+reading rules.

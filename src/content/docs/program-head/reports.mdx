@@ -1,0 +1,55 @@
+---
+title: Reports
+description: Why Program report export is not yet available in System CLOIE, and what to use instead.
+role:
+  - program-head
+appRoutes:
+  - /program-head/programs/:programId/reports
+  - /program-head/reports
+contentStatus: verified
+productStatus: deferred
+lastVerified: 2026-10-04
+keywords:
+  - reports
+  - export
+  - pdf
+  - spreadsheet
+related:
+  - /program-head/analytics/
+  - /dean/
+---
+
+import AvailabilityNotice from '../../../components/AvailabilityNotice.astro';
+
+This page exists so the gap is documented rather than silently discovered. It
+does not describe a working workflow.
+
+<AvailabilityNotice title="report export is not implemented">
+  The Reports page lists three planned reports — a Course-bound CILO summary,
+  stakeholder deployment completion, and a program outcome attainment digest —
+  and states that they are prepared for later export integration. There is no
+  export control and no generated PDF or spreadsheet.
+</AvailabilityNotice>
+
+## What is not decided yet
+
+The following have to settle before reports can be built at all:
+
+- rating scales and how CILO attainment is computed;
+- how GO aggregation and weighting work;
+- minimum-response privacy suppression;
+- Dean drill-down and report structure;
+- server-side generation rather than client-side assembly.
+
+## What to use instead
+
+- [Program analytics](/program-head/analytics/) for outcome evidence, trends, and qualitative summaries.
+- [Review responses](/program-head/responses/) for completion and individual submitted responses.
+- [Review learning-outcome readiness](/dean/learning-outcomes/) for college-wide alignment structure.
+
+## Dean reports
+
+:::caution
+Dean Analytics and Dean Reports do not currently resolve to a working page. See
+the [Dean guide](/dean/).
+:::

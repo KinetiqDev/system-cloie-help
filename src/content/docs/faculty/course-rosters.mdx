@@ -1,0 +1,102 @@
+---
+title: Manage Students in your Course roster
+description: What a Course roster is, how to add Students manually, how to import and reconcile a name list, and what locks after publication.
+role:
+  - faculty
+appRoutes:
+  - /faculty/course-rosters
+  - /course-rosters/:assignmentId
+lastVerified: 2026-10-04
+keywords:
+  - roster
+  - class list
+  - add student
+  - import students
+  - csv
+related:
+  - /concepts/course-assignments-and-rosters/
+  - /faculty/cilos/
+  - /troubleshooting/student-not-found-for-roster/
+---
+
+**My Course Rosters** lists every Course where you hold an active assignment.
+Open one to manage who is on the roster.
+
+## What a Course roster is
+
+The list of Students assigned to **one Course assignment** — one Course, one
+academic period, one year level and section. It is the population a Course
+evaluation goes to.
+
+:::caution
+A Course roster is not the same as a Student term placement, and it is not the
+official class list. Placement is institutional and set by the Secretary; the
+roster is the teaching list you maintain inside one assignment.
+:::
+
+## Open an assigned Course
+
+Choose the Course assignment from **My Course Rosters**. The roster view shows
+every member with their current **eligibility** state, and each row says why
+someone is **Ineligible** if they are.
+
+## Eligibility
+
+To appear as evaluation-eligible, a person must be:
+
+- an **active Student** account;
+- carrying a **complete profile**;
+- holding an **active-term placement**.
+
+Add them anyway if you know they belong — an ineligible member becomes eligible
+the moment their record is fixed, and you will see the state change.
+
+## Add a Student manually
+
+Use **Add one Student** and search by name. The result tells you which of
+`Exact match`, `Ambiguous`, or `No match` applied. Only add someone whose record
+you have verified.
+
+:::caution
+System CLOIE resolves roster members **by name**. There are no Student IDs in a
+roster. Two Students with the same name are genuinely ambiguous, and adding the
+wrong one is easy — check the program, major, and year level in the result before
+you confirm.
+:::
+
+## Import or reconcile a name list
+
+**Import from CSV** is the fast path for a real class list.
+
+1. Select **CSV import** or **Import students from CSV**.
+2. Drop in the file — or use the file picker.
+3. Review the preview. Each name is marked **Exact match**, **Ambiguous**,
+   **Invalid name**, or **Already Enrolled**.
+4. Choose per row: **Keep Student**, add the match, or skip.
+5. Confirm.
+
+The importer never guesses an **Ambiguous** or **Invalid name** row. You decide
+each one, which is the point — a bulk import that silently matched the wrong
+person would put the wrong Student in your evidence.
+
+## Remove or update membership
+
+Remove a Student by clearing the row. Anyone who has already **submitted** a
+response keeps it: submissions are permanent, and removing someone now only
+prevents future respondents.
+
+:::caution
+If you need to stop a response mid-window, use the evaluation's **Exclusions &
+late inclusion** controls rather than editing the roster.
+:::
+
+## What changes after publication
+
+Once an evaluation is published from this assignment:
+
+- the instrument version is **frozen** for that evaluation;
+- **ordinary roster writes are locked**;
+- one respondent assignment exists per active roster member, minus recorded exclusions.
+
+See [The roster is locked](/troubleshooting/roster-locked/) for what you can still
+do, and [Publish a Course evaluation](/faculty/publish-course-evaluation/).

@@ -1,0 +1,100 @@
+---
+title: Publish a Course evaluation
+description: The prerequisites, respondent preview, availability window, and consequences of publishing a Course-bound evaluation.
+role:
+  - faculty
+appRoutes:
+  - /faculty/cilo-evaluations/new
+  - /faculty/tools/published/*
+lastVerified: 2026-10-04
+keywords:
+  - publish evaluation
+  - deploy
+  - course evaluation
+  - publish
+  - student evaluation
+related:
+  - /faculty/outcome-alignment/
+  - /faculty/review-evaluation/
+  - /troubleshooting/cannot-publish-evaluation/
+---
+
+import MediaPlaceholder from '../../../components/MediaPlaceholder.astro';
+
+Publishing sends a Course evaluation to the Students on one Course assignment's
+roster. It is the point where the tool becomes a real evaluation.
+
+<MediaPlaceholder caption="Faculty Publish CILO Evaluation page showing the Course assignment picker, the Respondent Preview, and the Publish Evaluation button." />
+
+## Before you publish
+
+Three things must already be true. Check them in this order:
+
+1. **Every active CILO is aligned.** Each CILO needs an outcome and a
+   manifestation value — [Align CILOs with outcomes](/faculty/outcome-alignment/).
+   This is a hard gate, not a warning.
+2. **The tool exists and is saved.** Publication works from a saved version.
+3. **The roster is in place.** Students on the roster are who you will reach.
+
+:::caution
+If publication is blocked, it is almost always the alignment gate. See
+[I cannot publish an evaluation](/troubleshooting/cannot-publish-evaluation/).
+:::
+
+## Choose the Course assignment
+
+From **Evaluation Tools**, open the tool and choose **Continue to publish**. Pick
+the Course assignment this evaluation runs against.
+
+The assignment determines the respondents: an evaluation published against one
+section does not reach another section's Students.
+
+## Review respondents and exclusions
+
+The **Respondent Preview** lists every roster member who will receive the
+evaluation and every member who is excluded.
+
+| Excluded because | What it means |
+| --- | --- |
+| Active exclusion | You or the deploying role excluded them deliberately |
+| Ineligible | Not an active Student, profile incomplete, or no active-term placement |
+| Already submitted | They have already responded to this evaluation |
+
+Read this list before you commit. It is the last point at which the respondent
+set is easy to change.
+
+## Set the window
+
+- **Activation** — when the evaluation becomes available.
+- **Deadline** — when it stops being available.
+
+Both are optional, but an evaluation with no deadline stays open indefinitely.
+Set one unless you have a reason not to.
+
+## Publish
+
+Select **Publish Evaluation**.
+
+After publication the deployment follows **Scheduled → Active → Closed**, derived
+from your activation and deadline. Before the activation it is Scheduled; inside
+the window it is Active; after the deadline it is Closed.
+
+## What becomes locked
+
+This is the important part.
+
+- The **instrument version** is frozen. Later tool edits create a new version and
+  do not touch this evaluation.
+- **Ordinary roster writes are locked** for that assignment while the evaluation runs.
+- **One respondent assignment** is created per eligible roster member, minus exclusions.
+- **Each respondent may submit once.** A submitted response cannot be edited.
+
+If you discover a mistake mid-window, use the evaluation's **Exclusions & late
+inclusion** controls rather than changing the roster.
+
+## Close an evaluation
+
+Closing ends the window early. Use it when the response rate is sufficient or
+the term needs to end. Closing does not delete responses.
+
+See [Review a published Course evaluation](/faculty/review-evaluation/) next.

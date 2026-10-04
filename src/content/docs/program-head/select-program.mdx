@@ -1,0 +1,57 @@
+---
+title: Select the program you are working with
+description: When the program selector appears, what changing program does, and how to switch to another authorized program.
+role:
+  - program-head
+appRoutes:
+  - /program-head
+lastVerified: 2026-10-04
+keywords:
+  - select program
+  - program switcher
+  - authorized program
+related:
+  - /start/understand-access/
+  - /troubleshooting/program-not-visible/
+---
+
+If you are an authorized Program Head for more than one program, System CLOIE
+asks which program you are working with before it shows any program data.
+
+## When the selector appears
+
+- On first entry to the Program Head workspace.
+- Whenever you enter without a valid program selected — for example after
+  clearing your browser's state, or after one of your managed programs was
+  removed.
+
+## What changing programs does
+
+- Sets the program context for every page: Courses, assignments, outcomes, tools,
+  responses, and analytics.
+- Rewrites the navigation to point at that program's pages.
+- Resets the program's data scope — you see this program's records, not the other's.
+
+## What changing programs does not do
+
+- It does not grant or revoke authority. Both programs must already be on your
+  account.
+- It does not change your profile or your user record.
+- It does not carry work between programs. A draft or a filter set belongs to the
+  program you made it in.
+
+:::caution
+The selected program is validated server-side on every request. Editing the
+program in the URL gives you nothing — the server re-resolves your authority and
+refuses the request.
+:::
+
+## Switch to another authorized program
+
+1. Open the program switcher in the header.
+2. Select the program you want.
+3. The workspace reloads with that program active.
+
+If a program you head is not listed, it is not on your account. Ask the Secretary
+to add it under **Managed Programs** — see [Manage users](/secretary/users/) — or
+see [My program is not visible](/troubleshooting/program-not-visible/).
