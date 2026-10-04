@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Type and Astro diagnostics
+        run: pnpm check
+
+      - name: Build
+        run: pnpm build
+
+      # The site is a pile of internal cross-links, so a build that compiles is
+      # not the same as a build that is navigable. This walks dist/ and fails on
+      # any dead reference. No dependency: `scripts/check-links.mjs` is ~40 lines.
+      - name: Internal link check
+        run: pnpm check:links
