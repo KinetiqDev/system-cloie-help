@@ -1,0 +1,62 @@
+---
+title: Understand access and permissions
+description: Why you can see some pages but not others, why you can view something you cannot change, and what "access denied" means.
+lastVerified: 2026-10-04
+keywords:
+  - permissions
+  - access
+  - access denied
+  - unauthorized
+  - read only
+related:
+  - /start/choose-your-role/
+  - /troubleshooting/access-denied/
+---
+
+System CLOIE checks permission on the server for every request. Nothing you can
+do in the address bar widens what you can reach.
+
+## Your role
+
+Your role decides which workspaces and pages exist for you at all. A Student
+account simply has no route to Course assignments — there is nothing to deny.
+
+## Your scope
+
+Within a page, your role is narrowed further by scope:
+
+- A **Program Head** sees only the programs they are an authorized Program Head for.
+- A **Faculty Member** sees only the Courses they hold an active assignment for.
+- A **Dean** sees the whole college.
+- A **Secretary** sees the whole institution, minus the areas the Secretary does not own.
+
+## Viewing something does not always mean you can edit it
+
+This is the most common source of confusion. A page can be fully visible to you
+and still read-only.
+
+| You can see | Who maintains it |
+| --- | --- |
+| CILO-to-outcome alignment | Faculty author the mappings; the Program Head reviews them |
+| Institutional Learning Outcomes | General Education Coordinator |
+| Graduate Outcomes | Program Head |
+| CILOs | Faculty of the assigned Course |
+| Course assignments (Secretary) | Program Head, General Education Coordinator, or Dean — read-only for the Secretary |
+| Response details | Program Head sees identified responses; Faculty and Dean see anonymized responses only |
+
+Prefer the phrasing "you can review these mappings, but Faculty maintains them"
+over "mappings are available here".
+
+## Access denied
+
+An **access denied** or **unauthorized** message means your active role does not
+authorize that route. It is not a broken link and not a loading failure.
+
+Common reasons, in the order they are worth checking:
+
+1. Your active role is not the role that owns the page.
+2. Your scope does not include that program or Course.
+3. Your profile gate is not satisfied yet.
+4. The feature belongs to a role that has not been implemented for your account yet.
+
+See [I cannot access this page](/troubleshooting/access-denied/).
