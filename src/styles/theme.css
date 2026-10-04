@@ -195,8 +195,9 @@
   align-items: flex-start;
   padding: var(--space-3) var(--space-4);
   margin: 0 0 var(--space-6);
+  /* 1px on every side, per the design system's callout rule. Emphasis comes
+     from the tinted plane and the accent label, not from a side tab. */
   border: 1px solid var(--primary-wash-border);
-  border-inline-start: 3px solid var(--brand-accent);
   border-radius: var(--radius-md);
   background-color: var(--surface-tinted);
 }
@@ -371,8 +372,7 @@
 .availability {
   margin: var(--space-6) 0;
   padding: var(--space-4);
-  border: 1px solid var(--primary-wash-border);
-  border-inline-start: 3px solid var(--status-warning-main);
+  border: 1px solid var(--status-warning-main);
   border-radius: var(--radius-md);
   background-color: var(--status-warning-subtle);
 }

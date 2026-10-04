@@ -128,11 +128,14 @@ Five, all in `src/components/`. There is no general design-system package here.
 | --- | --- |
 | `VideoGuide.astro` | YouTube URL → embed + link out; no URL → a quiet "coming soon" slot. Never autoplays. |
 | `MediaPlaceholder.astro` | Names the screenshot that belongs there. The page works without it. |
-| `RoleNotice.astro` | States the role and its authority boundary. |
 | `AvailabilityNotice.astro` | Used instead of invented steps for deferred features. |
-| `RelatedGuides.astro` | The "Where to go next" block, driven by `related`. |
+| `RelatedGuides.astro` | The "Where to go next" block, driven by `related`, rendered automatically by `MarkdownContent.astro`. |
+| `SiteSearch.astro` | Wraps Starlight's own search control for the homepage. |
 
-`SiteSearch.astro` wraps Starlight's own search control for the homepage.
+A role badge component was considered and cut: the active section is already
+visible in the sidebar, the page title already names the role, and the `role`
+frontmatter already drives the contextual-help resolver. A badge would have been
+a third place carrying the same fact.
 
 ---
 
