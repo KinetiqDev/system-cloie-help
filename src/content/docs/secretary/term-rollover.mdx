@@ -1,0 +1,68 @@
+---
+title: Run term rollover
+description: What term rollover moves, what it deliberately leaves alone, how to preview it, and what graduating Students do.
+role:
+  - secretary
+appRoutes:
+  - /secretary/school-years/:id/rollover
+lastVerified: 2026-10-04
+keywords:
+  - rollover
+  - term rollover
+  - new term
+  - promote students
+related:
+  - /secretary/academic-calendar/
+  - /secretary/student-to-alumni/
+  - /workflows/academic-period-transition/
+---
+
+Term rollover moves Student academic placements from one term to the next. It is
+a deliberate, previewable operation — run the preview first and read the
+exceptions before you confirm.
+
+## What rollover changes
+
+- Each processed Student's academic **placement** moves to the target term.
+- Their program, major, year level, and section carry over as recorded.
+
+## What rollover does not change
+
+- It does **not** create Course assignments or move anyone between Course rosters.
+  Faculty and the Program Head maintain rosters separately, once the new term is active.
+- It does **not** touch accounts, roles, or profiles.
+- It does **not** delete submitted responses or evaluation history.
+- It does **not** automatically convert anyone into an **Alumni**.
+
+## Preview the rollover
+
+1. Open the school year and choose the **Term Rollover** workspace.
+2. Choose the **Source Term** and the **Target Term**.
+3. Review the **Students to Process** count and the **Cohort Promotion Rules**.
+4. Read **Exceptions Requiring Review**. An exception is a Student whose record
+   cannot be moved automatically — a Student with no placement, or a Student
+   whose data cannot be carried into the target term.
+5. Resolve or acknowledge each exception. If the list reads **No exceptions**,
+   every Student can move.
+
+## Review exceptions
+
+Do not confirm with unresolved exceptions you do not understand. Each exception
+names the Student and the reason; fix the Student's record, or leave them out of
+this rollover, and re-run the preview.
+
+## Run the rollover
+
+1. Select **Confirm Term Rollover**.
+2. Wait for the run to finish. The workspace reports **Students Processed** and
+   **Rollover Complete**.
+
+Rollover is idempotent in intent: re-running it for a term that already moved
+does not double-advance a Student. Confirm the preview before you commit.
+
+## What happens to graduating Students
+
+Graduating Students are **not** converted to Alumni by rollover. They stay
+Students, and their final-term evaluations remain available while the term is
+active. Converting them is a separate, confirmed step — see
+[Transition a graduated Student to Alumni](/secretary/student-to-alumni/).

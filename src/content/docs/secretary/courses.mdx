@@ -1,0 +1,75 @@
+---
+title: Manage Courses
+description: How the Course catalog works, what a Course's defaults do, and how to create, import, edit, or remove a Course.
+role:
+  - secretary
+appRoutes:
+  - /secretary/courses
+  - /secretary/courses/*
+lastVerified: 2026-10-04
+keywords:
+  - courses
+  - course catalog
+  - add course
+  - import courses
+  - csv
+related:
+  - /secretary/programs/
+  - /concepts/programs-majors-courses/
+  - /secretary/course-assignments/
+---
+
+The **Courses** page is the Course catalog. A Course is the stable record that
+assignments, rosters, CILOs, and evaluations all point at.
+
+## General Education and Program-specific Courses
+
+Every Course has a **Course Scope**:
+
+| Scope | Belongs to | Assigned by |
+| --- | --- | --- |
+| **General Education** | No single program | General Education Coordinator, or the Dean |
+| **Program-specific** | One program | That program's Program Head, or the Dean |
+
+The scope decides who may assign Faculty to it and which outcomes its CILOs are
+aligned against. Setting the wrong scope is the usual cause of a
+[missing Course assignment](/troubleshooting/course-assignment-missing/).
+
+## Create a Course
+
+1. Select **Add New Course**.
+2. Enter the **Course Code** and **Course Title**.
+3. Choose the **Course Scope**, and the **Program** if it is Program-specific.
+4. Set the catalog defaults below.
+5. Save.
+
+### Catalog defaults
+
+The defaults prefill an assignment when someone creates one:
+
+- **Default semester**
+- **Default term**
+- **Default year level**
+
+:::caution
+Defaults only prefill the assignment picker. They never rewrite history — an
+existing assignment keeps the period, section, and year level it was created
+with, even after you change the Course's defaults.
+:::
+
+## Import Courses
+
+Select **Import Courses** and drop in a **Course CSV file**. The importer accepts
+CSV up to 100 rows and previews the result before it commits. Rows that already
+exist are reported rather than duplicated.
+
+## Edit or deactivate a Course
+
+**Edit Course** changes the record's details and defaults. Deactivating stops a
+Course being used for new assignments while keeping its history.
+
+## Delete a Course
+
+Deletion is blocked while anything depends on the Course — an assignment, a
+roster, a CILO, or a published evaluation. Deactivate it instead unless the
+Course was created in error and nothing references it.

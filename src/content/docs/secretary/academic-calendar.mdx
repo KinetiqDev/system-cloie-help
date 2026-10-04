@@ -1,0 +1,77 @@
+---
+title: Manage school years
+description: How school years, semesters, and terms are structured, how to set the active period, and why the active period gates everything else.
+role:
+  - secretary
+appRoutes:
+  - /secretary/school-years
+  - /secretary/school-years/*
+lastVerified: 2026-10-04
+keywords:
+  - school year
+  - academic period
+  - semester
+  - term
+  - active period
+  - academic calendar
+related:
+  - /concepts/academic-periods/
+  - /secretary/term-rollover/
+  - /dean/learning-outcomes/
+---
+
+The **School Years** page is the academic calendar. Everything date-sensitive in
+System CLOIE — Student placements, Course assignments, rosters, evaluations —
+hangs off the active period.
+
+## School years, semesters, and terms
+
+- A **school year** spans one academic year.
+- A **school year** contains **semesters** (for example, First and Second
+  Semester) and **terms** inside them.
+- A **summer** is its own period, not a term inside a semester, and it may have
+  no terms at all.
+
+## Create a school year
+
+1. Select **Create School Year**.
+2. Enter the **Start Year**. The following years are derived from it.
+3. Add the **semesters** and, where the college runs one, the **summer**.
+4. Add periods — terms — inside each semester as needed.
+
+## Add periods
+
+Each period is a term with its own dates. Give it a name that people will
+recognise in a dropdown, because it appears on Course assignments,
+deployments, and analytics filters.
+
+## Set the active period
+
+Select **Set Active Term** on the period that is running now. Exactly one period
+is active at a time.
+
+## Complete or cancel a period
+
+- **Complete** closes the period. Readiness snapshots are persisted when a
+  period is completed, so the Dean can still read that term's alignment state
+  later.
+- **Cancel** closes the period without treating it as finished.
+
+Completing or cancelling a period also ends any evaluation whose deadline falls
+inside it, so tell Faculty before you close a term that still has open
+evaluations.
+
+## Why the active period matters
+
+| Area | Effect of the active period |
+| --- | --- |
+| Student placement | Only Students placed in the active term are roster-eligible |
+| Course assignments | An assignment belongs to one academic period |
+| Roster eligibility | A roster member must hold active-term placement |
+| Evaluations | Activation and deadline are interpreted in the active period |
+| Dean readiness | Defaults to the active period |
+| Term rollover | Source and target terms are chosen here |
+
+If an evaluation will not publish, or a Student cannot be rostered, the active
+period is usually the reason. See
+[Academic periods in System CLOIE](/concepts/academic-periods/).
