@@ -1,0 +1,70 @@
+---
+title: Course assignments and Course rosters
+description: The difference between a Course, an assignment, and a roster — and why Student placement is a fourth, separate thing.
+lastVerified: 2026-10-04
+keywords:
+  - course assignment
+  - roster
+  - class list
+  - teaching load
+related:
+  - /faculty/course-rosters/
+  - /program-head/course-assignments/
+  - /dean/course-assignments/
+---
+
+Three records that people use interchangeably, and one they confuse with all three.
+
+## Course
+
+The stable catalog record. A Course exists whether or not anyone is teaching it,
+and it has no Students attached to it directly.
+
+## Course assignment
+
+One **Faculty member**, one **Course**, one **academic period**, with a **year
+level** and **section**. It is the container for teaching work.
+
+Assignment authority by scope:
+
+| Role | Program-specific | General Education |
+| --- | --- | --- |
+| Secretary | read-only | read-only |
+| General Education Coordinator | — | **full**, college-wide |
+| Program Head | **full**, in their programs | read-only |
+| Dean | **full**, all programs | **full** |
+| Faculty | read-only, own assignments | read-only, own assignments |
+
+## Course roster
+
+The list of **Students** inside one assignment. It is the population a Course
+evaluation goes to.
+
+Roster management belongs to the assigned Faculty member. Roster members are
+matched **by name** — there are no Student IDs in a roster.
+
+## Student term placement is different
+
+:::caution
+**Placement is not roster.** A Student term placement is the institutional record
+that a Student belongs to a program, major, year level, and section in a term. It
+is set by the Secretary or by rollover.
+
+Roster eligibility checks that placement: to be evaluation-eligible, a roster
+member must be an active Student with a complete profile **and** an active-term
+placement.
+
+A Student can therefore be correctly placed in your program and still be ineligible
+because their profile is incomplete.
+:::
+
+## Lifecycle
+
+```
+Course (catalog)
+   └─ Course assignment (Faculty × term × section)
+        ├─ Course roster (Students, maintained by Faculty)
+        ├─ CILOs (authored by Faculty)
+        ├─ CILO alignment (maintained by Faculty)
+        └─ Published evaluation (frozen; locks ordinary roster writes)
+```
