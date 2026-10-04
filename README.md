@@ -206,6 +206,15 @@ role cannot be resolved  →  /start/choose-your-role/
 `appRoutes` here is the only coupling. This repository does not ship the
 resolver, and the main application does not import this repository.
 
+Two conventions keep the two sides from drifting:
+
+- Wildcards (`/faculty/**`) and bare role roots (`/faculty`) are **documentation
+  hints**. The application's resolver matches exact patterns and falls back to
+  the role landing page; it does not glob.
+- An article may answer **more routes than its own path**. `/student/submit`
+  declares `/student/evaluations/:id/submitted` because that is where the user
+  lands, and the resolver points that route at the most specific article.
+
 ---
 
 ## Source-of-truth rules
