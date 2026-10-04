@@ -32,12 +32,11 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      # Reports the base_path the build must use and injects the CNAME into the
-      # Pages artifact. "" with a custom domain; "/<repo>" on the fallback URL.
+      # The custom domain lives in `public/CNAME`, which Astro copies into the
+      # artifact. configure-pages reports the base_path the build must use:
+      # "/" with a custom domain, "/<repo>" on the project fallback URL.
       - uses: actions/configure-pages@v5
         id: pages
-        with:
-          cname: help.system-cloie.app
 
       - name: Build
         run: pnpm build

@@ -251,11 +251,10 @@ GitHub Pages, built by `.github/workflows/deploy.yml`.
 
 ### Custom domain
 
-`actions/configure-pages` is invoked with:
-
-```yaml
-cname: help.system-cloie.app
-```
+The domain is carried in `public/CNAME`, which Astro copies verbatim into the
+build output, and registered on the repository through the Pages API
+(`cname=help.system-cloie.app`). `actions/configure-pages@v5` no longer accepts a
+`cname` input — the file is the supported route.
 
 DNS must point the apex-ish host at GitHub Pages:
 
