@@ -130,7 +130,7 @@ Five, all in `src/components/`. There is no general design-system package here.
 | `MediaPlaceholder.astro` | Names the screenshot that belongs there. The page works without it. |
 | `AvailabilityNotice.astro` | Used instead of invented steps for deferred features. |
 | `RelatedGuides.astro` | The "Where to go next" block, driven by `related`, rendered automatically by `MarkdownContent.astro`. |
-| `SiteSearch.astro` | Wraps Starlight's own search control for the homepage. |
+| `SiteSearch.astro` | A labelled search input for the homepage that opens the header's search dialog and hands over the typed query. |
 
 A role badge component was considered and cut: the active section is already
 visible in the sidebar, the page title already names the role, and the `role`

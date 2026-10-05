@@ -76,7 +76,11 @@
 
 :root[data-theme='dark'] {
   --sl-color-white: #f1f5f9;
-  --sl-color-gray-1: #1e293b;
+  /* Dark inverts the ramp: gray-1 is the *brightest* neutral, the ink on
+     raised surfaces — native select options and the Pagefind placeholder.
+     It was carrying `--surface-primary`, which collapsed gray-1 onto gray-6
+     and rendered that text invisible on its own background. */
+  --sl-color-gray-1: var(--text-primary);
   --sl-color-gray-2: #cbd5e1;
   --sl-color-gray-3: #94a3b8;
   --sl-color-gray-4: #64748b;
@@ -165,13 +169,30 @@
  * 3. Brand chrome
  * ------------------------------------------------------------------------- */
 
-/* The CLOIE mark is a dark vector on a transparent canvas: it needs a light
-   plate to stay legible in the dark theme. */
-.sl-logo {
+/* The CLOIE mark is a dark navy vector on a transparent canvas. Against the
+   dark header it measures 1.01:1 — the navy reads as a hole, not a mark — so it
+   needs the light plate the design system already defines for exactly this.
+   The rule targets `.site-title img`: `.sl-logo` was never emitted by
+   Starlight 0.42, so that selector matched nothing and the plate silently
+   never rendered.
+
+   The plate is a disc because the mark is a ring, but the disc cannot be
+   inscribed in the canvas: the ink reaches 1.06x the radius of any circle
+   fitted to its height (measured from the asset's alpha channel), which would
+   shave the ends off the C. So the mark is inset inside a slightly larger
+   square and the circle wraps the mark's true extent, never the box. */
+.site-title img {
+  --logo-mark: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+  box-sizing: border-box;
+  width: calc(var(--logo-mark) + 0.25rem);
+  height: calc(var(--logo-mark) + 0.25rem);
+  padding: 0.125rem;
+  object-fit: contain;
+  border-radius: 50%;
   background-color: var(--brand-logo-plate);
-  border-radius: var(--radius-sm);
-  padding: 0.15rem 0.3rem;
-  margin-inline-start: -0.3rem;
+  /* The plate is 0.25rem wider than the mark; pull it back so the mark keeps
+     the nav's optical left edge. */
+  margin-inline-start: -0.125rem;
 }
 
 .sl-nav {
@@ -513,6 +534,9 @@
 }
 
 /* --- Print ----------------------------------------------------------------- */
+/* The dark block outranks Starlight's own `@media print` rule on specificity,
+   so printing from the dark theme keeps its inverted ramp. Restore gray-1 and
+   black to their printed values alongside the paper surfaces. */
 @media print {
   :root,
   :root[data-theme='dark'] {
@@ -521,5 +545,7 @@
     --sl-color-bg-nav: #ffffff;
     --sl-color-bg-sidebar: #ffffff;
     --sl-color-text: #000000;
+    --sl-color-gray-1: #0f172a;
+    --sl-color-black: #ffffff;
   }
 }
