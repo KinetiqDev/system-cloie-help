@@ -281,6 +281,8 @@ Academic setup → Outcomes → Evaluations → Responses → Evidence
 
 YouTube overview.
 
+The overview video sits directly under the opening paragraphs — it is not repeated at the foot of the page.
+
 ---
 
 ## 7.2 Choose your role
@@ -434,8 +436,6 @@ Academic period
 ```
 
 ### H2: Common Secretary tasks
-
-### H2: Secretary onboarding video
 
 ---
 
@@ -639,8 +639,6 @@ GO authoring by Program Head, CILO authoring and mappings by Faculty, ILO author
 
 ### H2: Main Dean workflows
 
-### H2: Dean onboarding video
-
 ---
 
 ## 9.2 Dean dashboard
@@ -748,8 +746,6 @@ College-wide General Education.
 - on-behalf deployment unless the current implementation explicitly permits it.
 
 ### H2: Common tasks
-
-### H2: Onboarding video
 
 ---
 
@@ -877,8 +873,6 @@ Select program
 → Publish deployment
 → Review responses and analytics
 ```
-
-### H2: Onboarding video
 
 ---
 
@@ -1123,8 +1117,6 @@ Open assigned Course
 → Review results
 ```
 
-### H2: Onboarding video
-
 ---
 
 ## 12.2 Course rosters
@@ -1306,8 +1298,6 @@ Sign in
 
 ### H2: What you cannot do
 
-### H2: Student onboarding video
-
 ---
 
 ## 13.2 Student dashboard
@@ -1464,8 +1454,6 @@ Sign in
 → View history
 ```
 
-### H2: Onboarding video
-
 ---
 
 ## 14.2 Alumni account
@@ -1527,8 +1515,6 @@ No unrelated Student records, Faculty data, Program management, or academic admi
 ### H2: Account entry and verification
 
 ### H2: Normal workflow
-
-### H2: Onboarding video
 
 ---
 

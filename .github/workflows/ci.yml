@@ -32,6 +32,11 @@ jobs:
       - name: Type and Astro diagnostics
         run: pnpm check
 
+      # One video slot per page: a second placeholder on the same page is the
+      # duplicate-slot regression. No dependency: ~40 lines of source scan.
+      - name: Duplicate video slot check
+        run: pnpm check:videos
+
       - name: Build
         run: pnpm build
 

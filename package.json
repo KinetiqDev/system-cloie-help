@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "check:links": "node scripts/check-links.mjs",
-    "verify": "pnpm check && pnpm build && pnpm check:links"
+    "check:videos": "node scripts/check-video-slots.mjs",
+    "verify": "pnpm check && pnpm check:videos && pnpm build && pnpm check:links"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.42.5",
